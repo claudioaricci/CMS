@@ -1,5 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/home.module.scss";
+import Image from "next/image";
+import techsImage from "../../public/images/techs.svg";
 
 export default function Home() {
   return (
@@ -47,6 +49,20 @@ export default function Home() {
               requisitadas pelo mercado.
             </span>
           </section>
+        </div>
+
+        <div className={styles.nextLevelFooter}>
+          <Image src={techsImage} alt="Tecnologias" />
+          <h2>
+            Mais de <span className={styles.alunos}>15 mil</span> já levaram sua
+            carreira ao próximo nivel.
+          </h2>
+          <span>
+            E você vai perder a chance de evoluir de uma vez por todas?
+          </span>
+          <a href="">
+            <button>ACESSAR TURMA!</button>
+          </a>
         </div>
       </main>
     </>
