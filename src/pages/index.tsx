@@ -25,7 +25,6 @@ interface ContentProps {
 }
 
 export default function Home({ content }: ContentProps) {
-  console.log("content", content);
   return (
     <>
       <Head>
@@ -36,11 +35,9 @@ export default function Home({ content }: ContentProps) {
           <section className={styles.ctaText}>
             <h1>{content?.title}</h1>
             <span>
-              Uma plataforma com cursos que vão do zero até o profissional na
-              pratica, direto ao ponto aplicando o que usamos no mercado de
-              trabalho. 👊
+              {content?.titleContent}
             </span>
-            <a href="">
+            <a href={content.linkAction}>
               <button>COMEÇAR AGORA!</button>
             </a>
           </section>
@@ -50,25 +47,22 @@ export default function Home({ content }: ContentProps) {
 
         <div className={styles.sectionContent}>
           <section>
-            <h2>Aprenda criar aplicativos para Android e iOS</h2>
+            <h2>{content?.mobileTitle}</h2>
             <span>
-              Você vai descobrir o jeito mais moderno de desenvolver apps
-              nativos para iOS e Android, construindo aplicativos do zero até
-              aplicativos.
+            {content?.mobileContent}
             </span>
           </section>
-          <img src="/images/financasApp.png" alt="Desenvolvimento Mobile" />
+          <img src={content?.mobileBanner} alt={content.mobileTitle} />
         </div>
 
         <hr className={styles.divisor} />
 
         <div className={styles.sectionContent}>
-          <img src="/images/webDev.png" alt="Desenvolvimento Web" />
+          <img src={content.webBanner} alt="Desenvolvimento Web" />
           <section>
-            <h2>Aprenda criar sistemas web</h2>
+            <h2>{content.webTitle}</h2>
             <span>
-              Criar sistemas web, sites usando as tecnologias mais modernas e
-              requisitadas pelo mercado.
+            {content.webContent}
             </span>
           </section>
         </div>
@@ -82,7 +76,7 @@ export default function Home({ content }: ContentProps) {
           <span>
             E você vai perder a chance de evoluir de uma vez por todas?
           </span>
-          <a href="">
+          <a href={content.linkAction}>
             <button>ACESSAR TURMA!</button>
           </a>
         </div>
