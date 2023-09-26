@@ -34,9 +34,7 @@ export default function Home({ content }: ContentProps) {
         <div className={styles.containerHeader}>
           <section className={styles.ctaText}>
             <h1>{content?.title}</h1>
-            <span>
-              {content?.titleContent}
-            </span>
+            <span>{content?.titleContent}</span>
             <a href={content.linkAction}>
               <button>COMEÇAR AGORA!</button>
             </a>
@@ -48,9 +46,7 @@ export default function Home({ content }: ContentProps) {
         <div className={styles.sectionContent}>
           <section>
             <h2>{content?.mobileTitle}</h2>
-            <span>
-            {content?.mobileContent}
-            </span>
+            <span>{content?.mobileContent}</span>
           </section>
           <img src={content?.mobileBanner} alt={content.mobileTitle} />
         </div>
@@ -61,9 +57,7 @@ export default function Home({ content }: ContentProps) {
           <img src={content.webBanner} alt="Desenvolvimento Web" />
           <section>
             <h2>{content.webTitle}</h2>
-            <span>
-            {content.webContent}
-            </span>
+            <span>{content.webContent}</span>
           </section>
         </div>
 
@@ -91,8 +85,6 @@ export const getStaticProps: GetStaticProps = async () => {
   const response = await prismic.query([
     Prismic.Predicates.at("document.type", "home"),
   ]);
-
-  //console.log(response.results[0].data)
 
   const {
     title,
